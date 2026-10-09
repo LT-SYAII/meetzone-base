@@ -1,13 +1,22 @@
 {
   "name": "online-meeting",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "MeetZone Base — prototipe video conference WebRTC P2P murni dengan signaling Node.js + Socket.IO.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "webrtc",
+    "socket.io",
+    "video-conference",
+    "meeting",
+    "p2p",
+    "nodejs",
+    "real-time"
+  ],
+  "author": "LT-SYAII",
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
