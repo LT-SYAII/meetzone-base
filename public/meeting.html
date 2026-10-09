@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting — MeetZone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="meeting-body">
+  <div id="preJoin" class="prejoin">
+    <div class="prejoin-card">
+      <h2>Siap Bergabung?</h2>
+      <div class="video-preview-wrap">
+        <video id="previewVideo" autoplay muted playsinline></video>
+        <i class="fa-solid fa-video-slash cam-off-icon hidden"></i>
+      </div>
+      <input type="text" id="nameInput" placeholder="Nama Anda" maxlength="30">
+      <div class="preview-controls">
+        <button id="previewMic" class="ctrl-btn on"><i class="fa-solid fa-microphone"></i></button>
+        <button id="previewCam" class="ctrl-btn on"><i class="fa-solid fa-video"></i></button>
+      </div>
+      <button id="joinNowBtn" class="btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Gabung Sekarang</button>
+    </div>
+  </div>
+
+  <div id="meetingRoom" class="meeting-room hidden">
+    <header class="topbar">
+      <div class="brand"><i class="fa-solid fa-video"></i> MeetZone</div>
+      <div class="room-code" id="roomCode"></div>
+      <button id="copyLinkBtn" class="ghost-btn"><i class="fa-solid fa-link"></i> <span>Salin Link</span></button>
+    </header>
+
+    <main id="videoGrid" class="video-grid"></main>
+
+    <aside id="chatPanel" class="chat-panel hidden">
+      <div class="chat-header">
+        <span><i class="fa-solid fa-comments"></i> Chat</span>
+        <button id="closeChatBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Ketik pesan...">
+        <button id="sendChatBtn"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </aside>
+
+    <footer class="controls">
+      <button id="micBtn" class="ctrl-btn on" title="Mic"><i class="fa-solid fa-microphone"></i></button>
+      <button id="camBtn" class="ctrl-btn on" title="Kamera"><i class="fa-solid fa-video"></i></button>
+      <button id="screenBtn" class="ctrl-btn" title="Share Screen"><i class="fa-solid fa-display"></i></button>
+      <button id="chatBtn" class="ctrl-btn" title="Chat"><i class="fa-solid fa-comments"></i></button>
+      <button id="leaveBtn" class="ctrl-btn leave" title="Keluar"><i class="fa-solid fa-phone-slash"></i></button>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="meeting.js"></script>
+</body>
+</html>
